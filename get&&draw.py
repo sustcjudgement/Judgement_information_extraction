@@ -178,11 +178,13 @@ def read_one_part_push_data(filename, part_dict, part):
 def draw_bar(list_dic, word,int_flag = False) -> Bar:
     point = 0
     ret_list = []
+    # print(list_dic)
     for i in list_dic:
         x = list()
         y = list()
         for t in i:
             y.append(i[t])
+            t = t.split("|")[0]
             x.append(t)
         # plt.bar(range(len(y)), y, color='rgb', tick_label=x)
         save_place = './result/' + word + str(point) + '.jpg'
@@ -207,15 +209,14 @@ def draw_bar(list_dic, word,int_flag = False) -> Bar:
         c = (
             Bar()
                 .add_xaxis(x)
-                .add_yaxis("被告人文化水平",y)
-
+                .add_yaxis("被告人职位",y)
                 .set_global_opts(title_opts=opts.TitleOpts(title="Cluster"+str(point)),
                                  yaxis_opts=opts.AxisOpts(name="个数"),
                                  )
         )
         ret_list.append(c)
-        c.render()
-        # print("oh yes")
+        # c.render()
+        print("oh yes")
     return ret_list
 
 def main(filename_1,filename_2,part,name):
@@ -241,16 +242,16 @@ def main(filename_1,filename_2,part,name):
     #     j -= 1
     #     print(j)
     # ==================================================
-    for x in range(part):
-        study_dict = read_one_part_study(filename_3, part_dict, x)
-        study_list.append(study_dict)
-    # draw_bar(study_list, 'study')
-    ret = draw_bar(study_list, 'study' + name)
-    j = 3
-    for i in range(len(ret)):
-        ret.pop().render(path="study"+str(j)+".html")
-        j -= 1
-        print(j)
+    # for x in range(part):
+    #     study_dict = read_one_part_study(filename_3, part_dict, x)
+    #     study_list.append(study_dict)
+    # # draw_bar(study_list, 'study')
+    # ret = draw_bar(study_list, 'study' + name)
+    # j = 3
+    # for i in range(len(ret)):
+    #     ret.pop().render(path="study"+str(j)+".html")
+    #     j -= 1
+    #     print(j)
     # ===========================================
     # for x in range(part):
     #     law_dict = read_one_part_law(filename_2, part_dict, x)
@@ -271,40 +272,34 @@ def main(filename_1,filename_2,part,name):
     #             local_dict_sim[i] = local_dict[i]
     #     local_list.append(local_dict_sim)
     # ret = draw_bar(local_list, 'local'+name)
+    # j = 3
     # for i in range(len(ret)):
-    #     ret.pop().render(path="cluster"+str(i)+".html")
-    # ========================================================================================================================
-    # for x in range(part):
-    #     work_dict = read_one_part_work(filename_1, part_dict, x)
-    #     work_dict_sim = dict()
-    #     for i in work_dict:
-    #         if work_dict[i] > 5:
-    #             work_dict_sim[i] = work_dict[i]
-    #     work_list.append(work_dict_sim)
-    # ret = draw_bar(work_dict, 'job' + name)
-    # for i in range(len(ret)):
-    #     ret.pop().render(path="cluster"+str(i)+".html")
-    # for x in range(part):
-    #     work_dict = read_one_part_work(filename_1, part_dict, x)
-    #     work_dict_sim = dict()
-    #     for i in work_dict:
-    #         if work_dict[i] > 5:
-    #             work_dict_sim[i] = work_dict[i]
-    #     work_list.append(work_dict_sim)
-    # ret = draw_bar(work_list, 'job' + name)
-    # for i in range(len(ret)):
-    #     ret.pop().render(path="job"+str(i)+".html")
-    # draw_bar(work_list, 'work' + name)
+    #     ret.pop().render(path="local"+str(j)+".html")
+    #     j-=1
+    # ========================================================
+    for x in range(part):
+        work_dict = read_one_part_work(filename_1, part_dict, x)
+        work_dict_sim = dict()
+        for i in work_dict:
+            if work_dict[i] > 5:
+                work_dict_sim[i] = work_dict[i]
+        work_list.append(work_dict_sim)
+    ret = draw_bar(work_list, 'job' + name)
+    j = 3
+    for i in range(len(ret)):
+        ret.pop().render(path="job"+str(j)+".html")
+        j-=1
     # # ========================================================================================================================
     # for x in range(part):
     #     old_dict = read_one_part_old(filename_1, part_dict, x)
     #     old_list.append(old_dict)
     # # draw_bar(old_list, 'old'+name,int_flag=True)
     # ret = draw_bar(old_list, 'old' + name)
+    # print(len(ret))
+    # j = 3
     # for i in range(len(ret)):
-    #     j = 0
     #     ret.pop().render(path="old"+str(j)+".html")
-    #     j += 1
+    #     j-=1
     # # ========================================================================================================================
     # for x in range(part):
     #     time_dict = read_one_part_time(filename_1, part_dict, x)

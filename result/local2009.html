@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/maps/china.js"></script>
+
+</head>
+<body>
+    <div id="261be7a4ccd94f35af0d4a328cc6c69f" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_261be7a4ccd94f35af0d4a328cc6c69f = echarts.init(
+            document.getElementById('261be7a4ccd94f35af0d4a328cc6c69f'), 'white', {renderer: 'canvas'});
+        var option_261be7a4ccd94f35af0d4a328cc6c69f = {
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "scatter",
+            "name": "geo",
+            "coordinateSystem": "geo",
+            "symbolSize": 12,
+            "data": [
+                {
+                    "name": "\u5b89\u5fbd",
+                    "value": [
+                        117.284922,
+                        31.861184,
+                        29
+                    ]
+                },
+                {
+                    "name": "\u6d59\u6c5f",
+                    "value": [
+                        120.152791,
+                        30.267446,
+                        20
+                    ]
+                },
+                {
+                    "name": "\u6e56\u5357",
+                    "value": [
+                        112.98381,
+                        28.112444,
+                        11
+                    ]
+                },
+                {
+                    "name": "\u8d35\u5dde",
+                    "value": [
+                        106.70741,
+                        26.598194,
+                        28
+                    ]
+                },
+                {
+                    "name": "\u5e7f\u4e1c",
+                    "value": [
+                        113.26653,
+                        23.132191,
+                        50
+                    ]
+                },
+                {
+                    "name": "\u5c71\u897f",
+                    "value": [
+                        112.562398,
+                        37.873531,
+                        18
+                    ]
+                },
+                {
+                    "name": "\u798f\u5efa",
+                    "value": [
+                        119.295144,
+                        26.100779,
+                        46
+                    ]
+                },
+                {
+                    "name": "\u7518\u8083",
+                    "value": [
+                        103.826308,
+                        36.059421,
+                        10
+                    ]
+                },
+                {
+                    "name": "\u9655\u897f",
+                    "value": [
+                        108.954239,
+                        34.265472,
+                        23
+                    ]
+                },
+                {
+                    "name": "\u6cb3\u5357",
+                    "value": [
+                        113.753602,
+                        34.765515,
+                        28
+                    ]
+                },
+                {
+                    "name": "\u5e7f\u897f",
+                    "value": [
+                        108.327546,
+                        22.815478,
+                        16
+                    ]
+                },
+                {
+                    "name": "\u9ed1\u9f99\u6c5f",
+                    "value": [
+                        126.661669,
+                        45.742347,
+                        13
+                    ]
+                },
+                {
+                    "name": "\u6e56\u5317",
+                    "value": [
+                        114.341861,
+                        30.546498,
+                        16
+                    ]
+                },
+                {
+                    "name": "\u5c71\u4e1c",
+                    "value": [
+                        117.020359,
+                        36.66853,
+                        30
+                    ]
+                },
+                {
+                    "name": "\u6c5f\u897f",
+                    "value": [
+                        115.909228,
+                        28.675696,
+                        16
+                    ]
+                },
+                {
+                    "name": "\u6cb3\u5317",
+                    "value": [
+                        114.468664,
+                        38.037057,
+                        18
+                    ]
+                },
+                {
+                    "name": "\u5185\u8499\u53e4",
+                    "value": [
+                        111.765617,
+                        40.817498,
+                        14
+                    ]
+                },
+                {
+                    "name": "\u56db\u5ddd",
+                    "value": [
+                        104.075931,
+                        30.651651,
+                        24
+                    ]
+                },
+                {
+                    "name": "\u4e91\u5357",
+                    "value": [
+                        102.710002,
+                        25.045806,
+                        16
+                    ]
+                }
+            ],
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8,
+                "fontSize": 12
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "geo"
+            ],
+            "selected": {
+                "geo": true
+            },
+            "show": true
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "formatter": function (params) {        return params.name + ' : ' + params.value[2];    },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0
+    },
+    "title": [
+        {
+            "text": 2016
+        }
+    ],
+    "visualMap": {
+        "type": "piecewise",
+        "min": 0,
+        "max": 100,
+        "inRange": {
+            "color": [
+                "#50a3ba",
+                "#eac763",
+                "#d94e5d"
+            ]
+        },
+        "calculable": true,
+        "splitNumber": 5,
+        "orient": "vertical",
+        "showLabel": true
+    },
+    "geo": {
+        "map": "china",
+        "roam": true,
+        "emphasis": {}
+    }
+};
+        chart_261be7a4ccd94f35af0d4a328cc6c69f.setOption(option_261be7a4ccd94f35af0d4a328cc6c69f);
+    </script>
+</body>
+</html>
